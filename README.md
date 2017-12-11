@@ -1,38 +1,31 @@
-# Multiple Linear regressing- backward Elimination
-多個自變量X求一個應變量y
+# Polynomial Linear regressing 多項式線性回歸:預測模型
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/1.png)
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/2.png)
+範例: 簡單的推測職位對應的薪水為多少
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/3.png)
+         注意: 
+        1.因為資料量很小(只取Level欄位)，務必要把資料改為矩陣格式x = dataset.iloc[:, 1:2].values 以免資料無法計算
+        2.又因為資料很少，我們想要建立的回歸模型需要把資料全部丟進去計算，不需要有訓練模型以及測試模型
 
-        Simple Linear Regression:       y=b0+b1*x1
-        Multiple Linear Regression:(向量)    y=b0+b1*x1+b2*x2+...+bn*xn
+建立兩種模型: 線性回歸模型 / 多項式回歸模型
+1.	Linear Regression
+2.	Polynomial Regression
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/4.png)![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/5.png)   
+第一欄為常數項 1  第三欄為平方 (也可以增加矩陣的位數，以增進較為完美的曲線
 
-範例: y=b0+b1*x1+b2*x2+ b3*x3+ b4*D1(將State改為一個虛擬變量)
+輸出圖形:
+1.	Linear Regression
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/5.png) 
+2.	Polynomial Regression
+A.	矩陣設定為2時的曲線
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/6.png)
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/8.png)
+B.	矩陣設定為4時的曲線
+![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/7.png) 
+由上方兩圖中可以看出第二張圖的多項式回歸的預測線(矩陣為4)比較準確
 
- ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/1.png)
- 
-        注意: (Dummy Variables Trap)虛擬變量陷阱(state:為名目尺度，所以要做分類數據處理)
 
-訓練集處理完畢如下圖: 所以避免虛擬變量陷阱，需要刪除其中一列。 x = x[:, 1:]
 
-  ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/2.png)
-  
-預測結果與實際結果的比對
 
-  ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/3.png)
-  
-        下一步利用backward Elimination來找出最適合的自變量 (P value最低)
-        
-        y=b0+b1*x1+b2*x2+...+bn*xn
-        b0是一個常數，但是這個函數不包含b0,我們要加入一個列axis=1 若加入行axis=0 (矩陣np.ones 40*1)，數值為1
-        x_train = np.append(arr = np.ones((40,1)),values = x_train, axis =1)
 
-  ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/4.png)
-  
-        開始利用backward Elimination的方式一步一步篩選要剔除的自變量
-        P Value最高的值(P>|t|)必須就在下一次的篩選中剔除(假設顯著性門檻值0.05)，下圖為X2 
-
-  ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/5.png)
-  
-        重複上述動作 直到找出最佳的P值(很小)
-
-  ![image](https://github.com/egroeglee/pictures/blob/master/MultipleLinearRegression/6.png)
-  
-# 最終可證: RD的研發經費多寡會影響最後的收益。
+       
