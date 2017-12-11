@@ -1,2 +1,2 @@
-# -Polynomial-Regression
- Polynomial Regression
+# Multiple-Linear-Regression
+Multiple Linear Regression 
