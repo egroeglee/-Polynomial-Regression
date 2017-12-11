@@ -44,17 +44,17 @@ from sklearn.linear_model import LinearRegression
 lin_reg = LinearRegression()
 lin_reg.fit(x, y)
 
-#Fitting Polynamial Regression to the dataset
+#Fitting Polynomial Regression to the dataset
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(degree = 4)
+poly_reg = PolynomialFeatures(degree = 4)#degree 默認值為2
 x_poly = poly_reg.fit_transform(x)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(x_poly, y)
 
 #Visualising the Linear Regression results
-plt.scatter(x, y, color='red')
+plt.scatter(x, y, color='red')#實際結果
 plt.plot(x, lin_reg.predict(x), color = 'blue')
-plt.title('Truth or Bluff()Linear regression')
+plt.title('Truth or Bluff(inear regression)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
@@ -69,11 +69,11 @@ plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
 
-# Predicting a new result with Linear Refression
+# Predicting a new result with Linear Regression
 lin_reg.predict(6.5)
 """
 計算該員工的年資&所對應的等級職位，
-這邊職位等級為6且做了2年(4年後可昇為7)
+假設這邊職位等級為6且做了2年(4年後可昇為7)
 所以這邊設定為6.5
 """
 
