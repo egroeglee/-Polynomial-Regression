@@ -2,6 +2,7 @@
 
  
 範例: 簡單的推測職位對應的薪水為多少
+
 ![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/3.png)
 
     注意: 
