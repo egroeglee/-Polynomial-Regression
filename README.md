@@ -1,6 +1,5 @@
 # Polynomial Linear regressing 多項式線性回歸:預測模型
-![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/1.png)
-![image](https://github.com/egroeglee/pictures/blob/master/PolynomialRegression/2.png)
+
  
 範例: 簡單的推測職位對應的薪水為多少
 
